@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\node_modules",
+    "\\node_modules\\@babel",
+    "\\node_modules\\@babel\\plugin-transform-literals",
+    "\\node_modules\\@babel\\plugin-transform-literals\\lib",
+    "\\node_modules\\@babel\\plugin-transform-member-expression-literals",
+    "\\node_modules\\@babel\\plugin-transform-member-expression-literals\\lib",
+    "\\node_modules\\@babel\\plugin-transform-modules-commonjs",
+    "\\node_modules\\@babel\\plugin-transform-modules-commonjs\\lib",
+    "\\node_modules\\@babel\\plugin-transform-object-assign",
+    "\\node_modules\\@babel\\plugin-transform-object-assign\\lib",
+    "\\node_modules\\@babel\\plugin-transform-object-super",
+    "\\node_modules\\@babel\\plugin-transform-object-super\\lib"
+  ],
+  "PreviewInSolutionExplorer": false
+}
