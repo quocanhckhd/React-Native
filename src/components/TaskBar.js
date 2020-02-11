@@ -27,8 +27,8 @@ const Account = ({ title, image }) => {
 const ThirdAccount = ({ title }) => {
     switch (title.toLowerCase()) {
         case "tạo mới khách hàng": 
-            return <Account title="Công việc" image={require('../assets/images/data/iconCalendarChip.png')} />
-        default: 
+            return <Account title="Công việc" image={require('../assets/images/data/iconCalendarChip.png')} /> 
+            default: 
             return null;
     }
 }   

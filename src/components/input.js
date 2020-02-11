@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TextInput } from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import  AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -34,18 +34,18 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry, rende
     const { inputStyle, containerStyle, inputContainerStyle } = styles;
     return (
         <View style={containerStyle}>
-                <Label title={label} />
-                <View style={inputContainerStyle}>
-                    <TextInput 
-                        secureTextEntry={secureTextEntry}
-                        autoCorrect={false}
-                        placeholder={placeholder}
-                        style={inputStyle}
-                        value={value}
-                        onChangeText={onChangeText}
-                        placeholderTextColor={label === "Bảng điều khiển" || label === "Khách hàng" ? "#617fac" : "#fff"}
-                    />
-                    <Trailing label={label} />
+            <Label title={label} />
+            <View style={inputContainerStyle}>
+                <TextInput 
+                    secureTextEntry={secureTextEntry}
+                    autoCorrect={false}
+                    placeholder={placeholder}
+                    style={inputStyle}
+                    value={value}
+                    onChangeText={onChangeText}
+                    placeholderTextColor={label === "Bảng điều khiển" || label === "Khách hàng" ? "#617fac" : "#fff"}
+                />
+                <Trailing label={label} />
             </View>
         </View>
     );

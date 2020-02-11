@@ -35,7 +35,7 @@ const RightBar = ({ title }) => {
                 </TouchableOpacity>
             );
 
-        case "":
+        default:
             return (
                 <TouchableOpacity style={{ 
                     backgroundColor: '#5d7dac', 
@@ -45,16 +45,20 @@ const RightBar = ({ title }) => {
                         width: 0,
                         height: 2
                     },
-                    paddingVertical: 5,
+                    paddingVertical: 10,
                     marginLeft: 10,
                     marginRight: 5,
-                    paddingHorizontal: 7,
-                    flexDirection: 'row'
-                }}><AntDesign color="#91a9c7" size={20} name="edit" /><Text style={{ marginVertical: 7, fontSize: 14, fontWeight: '300', color: '#7998c6'}}> Sửa</Text>
+                    paddingHorizontal: 20,
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <AntDesign color="#91a9c7" size={20} name="edit" />
+                    <Text style={{ marginLeft: 7, fontSize: 16, fontWeight: '300', color: '#7998c6'}}>
+                        Sửa
+                    </Text>
                 </TouchableOpacity>
             );
-
-        default: return null;
     }
 }
 
