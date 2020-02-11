@@ -24,6 +24,38 @@ class EditCustomer extends Component {
                             <CarInfo licNum="30E-16925" vin="31231231" color="black" brand="toytota-vios-ncp150" />
                         </View>
                     </View>
+                    <View style={{
+                        flexDirection: 'row', width: '100%', borderBottomWidth: 1, paddingHorizontal: 20,
+                        borderColor: '#7d95b1', paddingVertical: 20
+                    }}>
+                        <View style={{
+                            width: '60%', alignItems: 'flex-start', flexDirection: 'column',
+                            justifyContent: 'center', 
+                        }}>
+                            <View style={{ flexDirection: 'row' }}>
+                                <Image source={require('../assets/images/data/iconCalendar2.png')} />
+                                <Text style={{ marginLeft: 10, color: '#fff', fontWeight: 'bold', fontSize: 16 }}>Lịch hẹn gần nhất</Text>
+                            </View>
+                            <Text style={carInfoStyle.labelStyle}>CVDV</Text>
+                            <Text style={carInfoStyle.labelStyle}>Loại CV</Text>
+                            <Text style={carInfoStyle.labelStyle}>Nội dung</Text>
+                        </View>
+                        <View style={{ 
+                            backgroundColor: '#1a2b45', paddingLeft: 10, 
+                            paddingTop: 10, alignSelf: 'flex-end', flexDirection: 'column', width: '40%'
+                        }}>
+                            <View style={{ alignItems: 'flex-start'}}>
+                                <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#fff' }}>Danh sách phụ tùng hẹn từng bước</Text>
+                            </View>
+                            <View style={{ paddingTop: 25, paddingBottom: 25,
+                                                justifyContent: 'center', alignItems: 'center'}}>
+                                <Text style={{ fontSize: 20, fontWeight: '300', color: '#475e7d' }}>
+                                    KHÔNG CÓ PHỤ TÙNG HẸN TRƯỚC
+                                </Text>
+                            </View>
+                        </View>
+                    </View>
+                    <RoList roNumber="3412412542534" />
                 </View>
             </View>
         );
@@ -105,11 +137,11 @@ const UserInfo = ({ userName, phone, addr }) => {
                 </View>
                 <Text style={{ fontSize: 16, color: '#fff' }}>{addr}</Text>
             </View>
-            <View style={{ paddingTop: 10, paddingBottom: 5 }}>
+            <View style={{ paddingTop: 10, paddingBottom: 5, alignItems: 'flex-start' }}>
                 <TouchableOpacity style={{ borderRadius: 10, paddingVertical: 3, 
                     paddingHorizontal: 8, flexDirection: 'row', justifyContent: 'center',
-                    borderColor: '#fff' }}>
-                        <Text style={{ fontSize: 14, color: '#fff'}}>Xem tất cả</Text>
+                    borderColor: '#fff', borderWidth: 1, alignItems: 'center', paddingVertical: 3 }}>
+                        <Text style={{ fontSize: 12, color: '#fff'}}>Xem tất cả</Text>
                         <Octicons name="triangle-down" size={14} color="#fff" />
                 </TouchableOpacity>
             </View>
@@ -136,5 +168,23 @@ const styles = {
         width: '90%'
     }
 };
+
+const RoList = ({ roNumber }) => {
+    return (
+        <View style={{ flexDirection: 'column', width: '100%', borderBottomWidth: 1, 
+            paddingHorizontal: 20, borderColor: '#7d95b1', paddingVertical: 20}}>
+            <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18 }}>Danh sách báo giá</Text>
+            <View style={{ backgroundColor: '#1a2b45', width: '100%', paddingVertical: 10, 
+                        paddingHorizontal: 20, flexDirection: 'column', marginTop: 15 }}>
+                <Text style={{ fontSize: 18, color: '#fff', fontWeight: 'bold' }}>
+                    RO#: {roNumber} - Đóng RO
+                </Text>
+                <Text style={{ fontSize: 16, fontWeight: '500', color: '#344765', marginTop: 15 }}>
+                    Yêu cầu khách hàng:
+                </Text>
+            </View>
+        </View>
+    );
+}
 
 export default EditCustomer;
