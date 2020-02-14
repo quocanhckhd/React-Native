@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, Image } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Ocitcons from 'react-native-vector-icons/Octicons';
 
 const NavBar = ({ title }) => {
     
@@ -28,13 +29,25 @@ const NavBar = ({ title }) => {
 const RightBar = ({ title }) => {
     switch(title.toLowerCase()) {
 
-        case "tạo mới khách hàng": 
+        case "tạo mới khách hàng": case "sửa thông tin":
             return (
                 <TouchableOpacity style={{ backgroundColor: 'transparent'}}>
                     <Text style={{ color: '#91a9c7', fontWeight: 'bold', fontSize: 24}}>Lưu</Text>
                 </TouchableOpacity>
             );
-
+        case "lịch sử sửa chữa": 
+            return (
+                <View style={{ marginRight: 10, width: '25%', alignItems: 'flex-end', 
+                    justifyContent: 'center', backgroundColor: '#2c4061', paddingVertical: 5,
+                    paddingLeft: 10, height: 40, flexDirection: 'row' }}>
+                    <View style={{ width: '90%', alignItems: 'flex-start', justifyContent: 'center' }}>
+                        <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 16 }}>Tất cả</Text>
+                    </View>
+                    <View style={{ width: '10%', justifyContent: 'center', alignItems: 'flex-end' }}>
+                        <Ocitcons name="triangle-down" color="#fff" size={20} />
+                    </View>
+                </View>
+            );
         default:
             return (
                 <TouchableOpacity style={{ 
@@ -53,8 +66,8 @@ const RightBar = ({ title }) => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <AntDesign color="#91a9c7" size={20} name="edit" />
-                    <Text style={{ marginLeft: 7, fontSize: 16, fontWeight: '300', color: '#7998c6'}}>
+                    <AntDesign color="#fff" size={20} name="edit" />
+                    <Text style={{ marginLeft: 7, fontSize: 16, fontWeight: '300', color: '#fff'}}>
                         Sửa
                     </Text>
                 </TouchableOpacity>

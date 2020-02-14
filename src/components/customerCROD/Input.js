@@ -17,14 +17,14 @@ const Trailing = ({ title }) => {
     }
 }
 
-const Input = ({ title, size, highlight }) => {
+const Input = ({ title, size, highlight, placeholder }) => {
 
     const { titleStyle } = styles;
 
     return (
         <View style={{
             flexDirection: 'column',
-            width: size.toString() == '2' ? '50%' : '25%',
+            width: size.toString() == '2' ? '50%' : (size.toString() === '1' ? '25%' : '75%'),
             paddingHorizontal: 10
         }}>
             <Text style={titleStyle}>{title}</Text>
@@ -38,23 +38,31 @@ const Input = ({ title, size, highlight }) => {
                 borderTopWidth: highlight.toString() === "1" ? 2  : 0,
                 borderWidth: highlight.toString() === "1" ? 2  : 0,
                 borderColor: '#fff',
-                paddingRight: 10
+                paddingRight: 10,
+                paddingTop: 0
+                
             }}>
-                <TextInput 
-                    autoCorrect={false}
-                    style={{
-                        backgroundColor: '#2c4061',
-                        height: 35,
-                        color: '#fff',
-                        paddingLeft: 5,
-                        paddingRight: 5,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        borderRadius: 3,
-                        minWidth: '90%' 
-                    }}
-                />
-                <Trailing title={title} />
+                <View style={{ width: '90%', alignItems: 'flex-start' }}>
+                    <TextInput 
+                        autoCorrect={false}
+                        placeholder={placeholder}
+                        style={{
+                            backgroundColor: '#2c4061',
+                            height: 37,
+                            color: '#fff',
+                            paddingLeft: 15,
+                            alignItems: 'flex-start',
+                            borderRadius: 3,
+                            color: "#fff",
+                            fontWeight: 'bold', fontSize: 14
+                        }}
+                        placeholderTextColor="#fff"
+                        placeholderStyle={{ fontWeight: 'bold', fontSize: 14 }}
+                    />
+                </View>
+                <View style={{ width: '10%', alignItems: 'flex-end' }}>
+                    <Trailing title={title} />
+                </View>
             </View>
         </View>
     );

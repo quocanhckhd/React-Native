@@ -44,7 +44,7 @@ class AddNewCustomer extends Component {
                         </View>
                         <View style={{ flexDirection: 'row'}}>
                             <Input title="Fax:" size="1" highlight="0"  />
-                            <Input title="Ghi chú:" size="2" highlight="0"  />
+                            <Input title="Ghi chú:" size="3" highlight="0"  />
                         </View>
                        
                     </View>
